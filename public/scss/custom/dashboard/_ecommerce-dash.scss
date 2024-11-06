@@ -1,0 +1,300 @@
+/******************************
+  35 ECOMMERCE DASHBOARD START
+******************************/
+/* overall-revenue */
+.overall-revenuetbl{
+  .card-body{   
+    .revenue-detail{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;                 
+    }
+    .revenue-detail{
+      span{
+        margin-inline-start: auto;
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* top selling*/
+.top-sellintbl{
+  tr{
+    td{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+/* sale-revenue */
+.sale-revenue{
+  .card-body{
+    padding-block-start: 41px;
+    h4{
+      margin-block-start: 15px;
+      font-weight: 400;
+    }
+    h3{
+      display: flex;
+      align-items: center;
+      margin-block-end: 20px;
+      .badge{
+        margin-inline-start: 25px;
+        font-weight: 500;
+        i{
+          font-size: 14px;
+          margin-inline-start: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+/* support-inboxtbl */
+.support-inboxtbl{  
+  h6{
+    margin-block-end: 3px;
+    color: $black;
+  }
+  p{   
+    font-size: 12px;
+    font-weight: 400;    
+  }
+  tr{
+    &:first-child{
+      td{
+        padding-block-start: unset;
+      }
+    }
+    td{
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+  }
+}
+
+/* sale category */
+.sale-categorychart{ 
+  position: relative;
+  .category-count{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-inline-end: -50%;
+    transform: translate(-50%, -50%) ;
+    h2{
+      font-size: 26px;
+      color: $theme-primary;
+    }
+  }
+  .apexcharts-legend{
+    inset: auto 0px 5px 0 !important;
+    padding: 0;
+    .apexcharts-legend-series{          
+      width:45%;
+      .apexcharts-legend-text{
+        &:nth-child(2){
+          margin-inline-start:3px;
+        }
+      }
+      &:nth-child(even){
+        margin-inline-start: auto !important;
+        text-align: right;
+      }
+    }
+  }
+}
+
+/* brand producttbl*/
+.brand-producttbl{
+  img{
+    margin-inline-end: 20px;
+  }
+  td{
+    padding-block-start: 9px !important;
+    padding-block-end: 9px !important;
+  }
+}
+
+/*  map status */
+.map-status{
+  #world-map{
+    height:250px;
+  }
+  .progress{
+    height: 10px;
+  }
+  .progress-group{   
+    h6{
+      margin-block-end: 5px;
+    }
+    +.progress-group{
+      margin-block-start: 16px;
+    }
+  }
+  h6{
+    font-weight:400;
+  } 
+  .card-footer{
+    background-color: $white;
+    border-radius: 15px;
+    // padding:0;
+    ul.map-detail{
+      border-top: 1px solid $theme-border;     
+      display: flex;
+      justify-content: space-between;
+      li{
+        text-transform: capitalize;
+        text-align: center;
+        width: 100%;
+        padding: 15px 0;
+        h6{
+          font-weight: 400;
+          margin-block-end: 5px;
+        }
+        +li{
+          border-left: 1px solid $theme-border;
+        }
+      }
+    }
+  }
+  .wdt-75{
+    width:72%;
+  }
+  .wdt-50{
+    width:50%;
+  }
+  .wdt-25{
+    width:25%;
+  }
+  .wdt-35{
+    width:35%;
+  }
+.jvectormap-container {   
+    path{
+      fill: rgba($theme-primary,0.1);
+    }   
+}
+#sale-map{  
+  margin-inline-end:15px;
+}
+.jvectormap-zoomin,.jvectormap-zoomout {
+    position:absolute;
+    left:10px;   
+    display:none;
+}
+}
+
+/* ecommerce product */
+.ecompro-slide{
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.ecompro-slide {
+  margin-inline-start: -15px;
+  margin-inline-end: -15px;
+  .slick-prev,.slick-next {
+    background-color: $theme-primary;
+    z-index: 1;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    &::before{
+      color: $white;
+    }
+  }
+  .slick-prev {
+    left: 15px;
+    transform: translateX(-15px);
+    &::before{
+      content: "\f104";
+      font-family: "FontAwesome";
+    }
+  }
+  .slick-next {
+    right: 15px;
+    transform: translateX(15px);
+    &::before{
+      content: "\f105";
+      font-family: "FontAwesome";
+    }
+  }
+  &:hover{
+    .slick-prev,.slick-next{
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }   
+  }
+}
+.ecom-product{
+  margin-left: 12px;
+  margin-right: 12px;
+  .card-body{
+    overflow: hidden;   
+    border-radius: 5px;
+  }
+  .product-imgwrap{
+    border-radius: 15px;
+    overflow: hidden;
+    img{
+      width:100%;
+      transition: all 0.5s ease;
+    }
+  }
+  .detail-wrap{
+    padding-block-start: 20px;
+    position: relative;
+    h5{
+      margin-block-end: 5px;
+    }   
+    .product-color{
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      li{       
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border:2px solid $white;
+        + li{
+          margin-inline-start: unset;
+        }
+        >div{
+          &:before{
+            font-size:8px;
+          }
+        }
+      }
+    }
+    .rating-detail{
+      display: flex;
+      align-items: center;
+      span{
+        margin-inline-start: 10px;
+      }     
+    }    
+  }
+  &:hover{
+    .product-imgwrap{
+      img{
+        transform: scale(1.05);
+      }
+    }
+  }
+  [id^=ecom-pro]{
+    margin-inline-start: -47px;
+    margin-inline-end: -35px;
+    margin-block-end: -35px;
+  }
+}
+/******************************
+  ECOMMERCE DASHBOARD END
+******************************/

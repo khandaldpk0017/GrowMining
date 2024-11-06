@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Blog")
+  body
+
+    // Loader Start
+    +loader
+    // Loader End
+
+    // Header Start
+    +header
+    // Header End
+
+  
+    .themebody-wrap
+
+      // theme body start
+      +codexbreadcrumb('blog','pages')
+      // theme body end
+      
+      // theme body start
+      .theme-body
+        .grid.grid-cols-12.page-gap              
+          .col-span-12(class="xl:col-span-4 lg:col-span-6 md:col-span-6")
+            +bloggrid('Scottish Creatives To Receive Funded Business.','edro',"19 Apr, 2022",'1.jpg')
+          .col-span-12(class="xl:col-span-4 lg:col-span-6 md:col-span-6")
+            +bloggrid('Scottish Creatives To Receive Funded Business.','edro',"19 Apr, 2022",'2.jpg')
+          .col-span-12(class="xl:col-span-4 lg:col-span-6 md:col-span-6")
+            +bloggrid('Scottish Creatives To Receive Funded Business.','edro',"19 Apr, 2022",'3.jpg')
+          .col-span-12(class="xl:col-span-4 lg:col-span-6 md:col-span-6")
+            +bloggrid('Scottish Creatives To Receive Funded Business.','edro',"19 Apr, 2022",'4.jpg')
+          .col-span-12(class="xl:col-span-4 lg:col-span-6 md:col-span-6")
+            +bloggrid('Scottish Creatives To Receive Funded Business.','edro',"19 Apr, 2022",'5.jpg')
+          .col-span-12(class="xl:col-span-4 lg:col-span-6 md:col-span-6")
+            +bloggrid('Scottish Creatives To Receive Funded Business.','edro',"19 Apr, 2022",'6.jpg')
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end 
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile        

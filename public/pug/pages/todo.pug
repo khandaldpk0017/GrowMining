@@ -1,0 +1,49 @@
+-var todoList = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Todo")
+  body
+
+    // Loader Start
+    +loader
+    // Loader End
+
+    // Header Start
+    +header
+    // Header End
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('to-do','pages')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+        .grid.grid-cols-12          
+          .col-span-12
+            .card.buttons
+              .card-header
+                h4 Todo&nbsp;
+                  span.countTodo
+              .card-body                      
+                .todo-content
+                    .todo-input.form-group
+                      .input-group
+                        input.form-control.todoInput(type='text' placeholder="Enter Something Here.." )
+                        a.input-group-text.border-0.add-todo(href="javascript:void(0);") Add to task                         
+                      .error                  
+                    ul.todo-list                                          
+      // theme body end
+
+                                      
+    // footer start
+    +footer
+    // footer end
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile

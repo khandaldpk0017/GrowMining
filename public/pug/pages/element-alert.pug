@@ -1,0 +1,126 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+
+  +headerfile("alert")
+
+  body
+
+    // Loader Start
+    +loader
+    // Loader End
+
+    // Header Start
+    +header
+    // Header End
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('alert','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .grid.grid-cols-12.page-gap
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Default Alerts
+              .card-body.grid.cdx-gap
+                .alert.primary A simple primary alert—check it out!
+                .alert.secondary A simple secondary alert—check it out!
+                .alert.success A simple success alert—check it out!
+                .alert.info A simple info alert—check it out!
+                .alert.warning A simple warning alert—check it out!
+                .alert.danger A simple danger alert—check it out!
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 rounded Alerts
+              .card-body.grid.cdx-gap
+                .alert.rounded-primary A simple primary alert—check it out!
+                .alert.rounded-secondary A simple secondary alert—check it out!
+                .alert.rounded-success A simple success alert—check it out!
+                .alert.rounded-info A simple info alert—check it out!
+                .alert.rounded-warning A simple warning alert—check it out!
+                .alert.rounded-danger A simple danger alert—check it out!
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 outlined Alerts
+              .card-body.grid.cdx-gap
+                .alert.outline-primary A simple primary alert—check it out!
+                .alert.outline-secondary A simple secondary alert—check it out!
+                .alert.outline-success A simple success alert—check it out!
+                .alert.outline-info A simple info alert—check it out!
+                .alert.outline-warning A simple warning alert—check it out!
+                .alert.outline-danger A simple danger alert—check it out!
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 rounded outline Alerts
+              .card-body.grid.cdx-gap
+                .alert.outline-rounded-primary A simple primary alert—check it out!
+                .alert.outline-rounded-secondary A simple secondary alert—check it out!
+                .alert.outline-rounded-success A simple success alert—check it out!
+                .alert.outline-rounded-info A simple info alert—check it out!
+                .alert.outline-rounded-warning A simple warning alert—check it out!
+                .alert.outline-rounded-danger A simple danger alert—check it out!
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Dismissing Alerts
+              .card-body.grid.cdx-gap
+                .alert.primary A simple primary alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.secondary A simple secondary alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.success A simple success alert—check it out! 
+                  .close-alert
+                    i(data-feather="x")
+                .alert.info A simple info alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.warning A simple warning alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.danger A simple danger alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 ourlined Dismissing Alerts
+              .card-body.grid.cdx-gap
+                .alert.outline-primary A simple primary alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.outline-secondary A simple secondary alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.outline-success A simple success alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.outline-info A simple info alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.outline-warning A simple warning alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+                .alert.outline-danger A simple danger alert—check it out!
+                  .close-alert
+                    i(data-feather="x")
+      // theme body end
+        
+    // footer start 
+    +footer
+    // footer end
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile

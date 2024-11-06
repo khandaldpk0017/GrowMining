@@ -1,0 +1,87 @@
+-var chartjs = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+
+  +headerfile("chartjs")
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('chart js','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+          .grid.grid-cols-12.cdx-gap      
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 area chart
+                .card-body.chartjs-main
+                  canvas#barchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 bubble chart
+                .card-body.chartjs-main
+                  canvas#bubblechart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 Doughnut chart
+                .card-body.chartjs-main
+                  canvas#doughnutchart.doughnutchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 pie chart
+                .card-body.chartjs-main
+                  canvas#piechart.doughnutchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 line chart
+                .card-body.chartjs-main
+                  canvas#linechart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 Mixed Chart chart
+                .card-body.chartjs-main
+                  canvas#mixchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 polar area chart
+                .card-body.chartjs-main
+                  canvas#polarchart.doughnutchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 radar chart
+                .card-body.chartjs-main
+                  canvas#radarchart.doughnutchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 scatter chart
+                .card-body.chartjs-main
+                  canvas#scatterchart
+                    
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile

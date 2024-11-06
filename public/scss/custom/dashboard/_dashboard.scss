@@ -1,0 +1,321 @@
+
+/***********************
+  34 DASHBOARD START
+*************************/
+.common-dash{
+    .card{
+        .card-header{
+            .action-menu {
+                .action-toggle{
+                    color: $font-light;
+                    padding: 0px 8px;
+                    border: 1px solid $theme-border;
+                    border-radius: 5px;
+                    &:hover{
+                        color: $white;
+                        background-color: $theme-primary;
+                    }
+                }
+            }
+        }
+    }
+    .table {
+        > :not(:last-child) {
+            > :last-child > *{
+                border-color: $theme-border;
+            }
+        }
+    }
+    tr{
+        &:last-child{
+            td{
+                border-bottom: none;
+                padding-block-end: 0;
+            }
+        }    
+        th{
+            font-size:16px;
+            padding-top:unset;
+            font-weight:500;
+        }   
+        th,td{
+            white-space: nowrap;
+            &:first-child{
+                padding-inline-start:0;
+            }
+            &:last-child{
+                padding-inline-end: 0 ;
+                text-align: right ;
+            }
+        }
+        td{         
+            color: $font-light;
+            font-size: 14px;                  
+            vertical-align: middle;
+            border-bottom: 1px solid $theme-border;           
+            .badge{
+                transition: all 0.4s ease;               
+            }
+            .media{
+                align-items:center;
+                >img{
+                    margin-inline-end: 15px;
+                }
+            }
+            span{
+                display: block;
+                color: $font-light;
+            }
+            i{          
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }    
+        .media{
+            .img-wrap{
+                background-color: rgba($theme-primary, 0.1);
+                width: 42px;
+                height: 42px;
+                border-radius:5px ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-inline-end: 15px;
+                overflow: hidden;
+                transition: all 0.4s ease;
+            }
+        }       
+    }
+    .tblbody-p0{
+       tbody{
+        tr{
+            &:first-child{
+                td{
+                    padding-block-start: unset;
+                }
+                }
+            }
+        }
+     }
+}
+
+/* welcome-card */
+.welcome-card {
+    .welcome-imgwarp{
+        background-color: rgba($theme-primary,0.1);
+    }
+    img{
+        width: 100%;
+    }
+    h2{             
+        color: $theme-primary;
+        margin-block-end: 10px;
+    }
+    p{  
+        color: $font-light;  
+        font-size: 16px ;
+    }
+    .btn{
+        margin-top: 20px;
+    }
+}
+
+
+/* earning-chart */
+.earning-chart{
+    position:relative;
+    .card-body{        
+        padding: 0 !important;    
+        overflow: hidden ;   
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;       
+        #earning-chart{
+            margin-block-end: -30px;
+            margin-inline-start: -25px;
+            margin-inline-end: -25px;
+        }        
+    }    
+    .vactor-animated{
+        li{
+            svg{
+                fill: rgba($theme-primary,0.1);
+            }
+        }
+    }
+}
+
+.animated-shap{
+    overflow: hidden;
+    h3{       
+        margin-block-start: 5px;
+        font-size: 20px;
+        span{
+            font-size:14px;
+            margin-inline-start:5px;
+            font-weight:400;
+        }
+    }
+    h5{       
+        font-weight: 400;
+        margin-block-start: 5px;
+        font-size: 14px;
+        i{
+            padding-inline-start: 5px;
+        }
+    }
+    .earning-detail{
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+    }
+    .card-header{ 
+        z-index:1;
+    }    
+}
+
+/* product chart */
+.product-chart{     
+    .prochart-detail{
+        padding-inline-start: 25px;
+        padding-inline-end: 25px;
+    }
+    .card-body{
+        padding:0 !important;
+        overflow:hidden;
+        z-index:1;
+        #product-chart{
+            margin-block-end: -30px;
+            margin-inline-start: -25px;
+            margin-inline-end: -25px;
+        }
+    }      
+}
+
+/* countries  tbl */
+.countri-tbl{
+    tr{
+        td{               
+            padding-top: 10px;
+            padding-bottom: 10px;                               
+            .icon-countri{
+                width: 41px;
+                height: 41px;
+                border-radius:50%;
+                font-size: 16px;                               
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: capitalize;
+                font-weight: 600;
+                margin-inline-end: 15px ;
+                transition: all 0.4s ease;                
+            }       
+            i{
+                margin-inline-start:8px;
+            }            
+        }              
+    }
+}
+/* recent-ordertbl */
+.recent-ordertbl{
+    tr{
+        th{
+            padding-block-start: 0;
+            font-size: 16px;
+        }                 
+    }
+}
+/* project-status */
+.project-status{
+    .card-body{
+        padding-inline-end: 20px ;    
+    }
+    .media{
+        align-items: center ;
+        h5{
+            margin-block-end: 15px;
+            i{
+                margin-inline-start: 5px ;
+                font-weight: 600 ;
+            }
+        }
+        h2{
+            margin-block-end: 5px;
+        }
+        // .media-body{           
+        //     overflow: hidden;    
+        //     [id^='pro-status']{
+        //         margin-block-start: -20px;
+        //         margin-block-end: -20px;
+        //         margin-inline-end: -25px;               
+        //         text-align: right;           
+        //     }
+        // }
+    }        
+}
+/* project-summarytbl */
+.project-summarytbl{
+    tr{
+        th{
+            padding-block-start: 0;
+        }
+        td,th{                                      
+            .team{               
+                li{
+                    display: inline-block;
+                    &:nth-child(2){
+                        margin-inline-start: -15px;
+                        margin-inline-end: 5px;
+                    }
+                }  
+                img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }               
+    }        
+}
+
+/* visitor-performance */
+.visitor-performance{   
+    .card-body{       
+        h4{
+            padding-inline-start: 25px;
+            color: $theme-primary;
+        }
+    }
+}
+/* up-grade */
+.cdx-upgrade{
+    background-image: url('../images/dashboard/up-grade.png');
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $white;
+    h2{
+        margin-block-end: 5px;
+    }
+    p{
+        font-size: 16px;
+        width: 50%;
+        color: $white;
+    }
+    .btn{       
+        font-weight :600;
+        margin-block-start: 20px;
+        transition: all 0.5s ease;
+        &:hover{
+            box-shadow: inset 0 0 0 2em $theme-secondary;
+            border-color: $theme-secondary;
+            color: $white !important;
+        }
+    }
+    .card-body{
+        padding:35px;
+        height: 100%;
+    }
+}
+/*****************************
+     DASHBOARD END
+******************************/

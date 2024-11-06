@@ -1,0 +1,494 @@
+-var apexchart = true ;
+-var mapchart  = true ;
+-var slickslider  = true;
+-var ecommercedash = true;
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Dashboard")
+  body
+
+    // Loader Start
+    +loader
+    // Loader End
+
+    // Header Start
+    +header
+    // Header End
+
+    .themebody-wrap
+
+      // breadcrumb start
+      .codex-breadcrumb
+        .breadcrumb-contain
+          .left-breadcrumb
+            h1 Ecommerce
+          .right-breadcrumb
+            ul.breadcrumb
+              li.breadcrumb-item
+                a(href='javascript:void(0);') Dashboard
+              li.breadcrumb-item.active
+                a(href='javascript:void(0);') Ecommerce     
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.common-dash     
+        .grid.grid-cols-12.page-gap   
+          .col-span-12(class="2xl:col-span-4 md:col-span-6")
+            .card.overall-revenuetbl
+              .card-header
+                h4 Overall Revenue
+                .setting-card.action-menu
+                  a.action-toggle(href="javascript:void(0)")
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly    
+              .card-body
+                .revenue-detail
+                  h3.text-primary $ 85.736,00
+                  span 24%
+                #over-revenue
+          .col-span-12(class="2xl:col-span-4 md:col-span-6")
+            .card.top-sellintbl
+              .card-header
+                h4 Top Selling Products
+                .setting-card.action-menu
+                  a.action-toggle(href="javascript:void(0)")
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly
+              .card-body
+                .overflow-x-auto
+                  table.table.tblbody-p0
+                    tbody
+                      tr              
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt="")
+                            .media-body                             
+                              h6.text-black Headphones JBL
+                              span Art. 964323838                       
+                        td
+                          span.badge.badge-secondary 703
+                      tr              
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="")  
+                            .media-body                             
+                              h6.text-black Samsung SM-G998B
+                              span Art. 374693244                       
+                        td
+                          span.badge.badge-success 837
+                      tr              
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt="") 
+                            .media-body                             
+                              h6.text-black 4K UHD TV 
+                              span Art. 964323838                       
+                        td
+                          span.badge.badge-info 459
+                      tr              
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt="")
+                            .media-body
+                              h6.text-black 15.6” Gaming LAptop
+                              span Art. 893475374                    
+                        td
+                          span.badge.badge-warning 423
+                      tr              
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt="")
+                              .media-body
+                                h6.text-black Fujifilm X- S10
+                                span Art. 348998770                       
+                          td
+                            span.badge.badge-danger 902
+                      tr              
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="")
+                              .media-body
+                                h6.text-black iphone 11 PRO
+                                span Art. 234987498                      
+                          td
+                            span.badge.badge-info 390                     
+          .col-span-12(class="2xl:col-span-4 xl:col-span-5")
+            .grid.grid-cols-12.cdx-gap
+              .col-span-12(class="xl:col-span-12 md:col-span-6")
+                .card.sale-revenue
+                  .card-header
+                    h4 Total Sale
+                    .setting-card.action-menu
+                      a.action-toggle(href="javascript:void(0)")
+                        i(data-feather="more-horizontal")
+                      ul.action-dropdown                 
+                        li
+                          a(href="javascript:void(0);")
+                            i.fa.fa-calendar-o
+                            | weekly
+                        li
+                          a(href="javascript:void(0);")
+                            i.fa.fa-calendar-check-o
+                            | monthly
+                        li
+                          a(href="javascript:void(0);") 
+                            i.fa.fa-calendar
+                            | yearly
+                  .card-body
+                    h3 $45,347.19
+                      span.badge.badge-primary 25.7%
+                        i.fa.fa-angle-up 
+                    .progress.progress-primary
+                      .progress-bar(style="width: 45%" )                   
+                    h4.text-light You made an extra 
+                     span.text-success $1,827.24 
+                     | this week 
+              .col-span-12(class="xl:col-span-12 md:col-span-6")
+                .card.sale-revenue
+                  .card-header
+                    h4 Total Revenue
+                    .setting-card.action-menu
+                      a.action-toggle(href="javascript:void(0)")
+                        i(data-feather="more-horizontal")
+                      ul.action-dropdown                 
+                        li
+                          a(href="javascript:void(0);")
+                            i.fa.fa-calendar-o
+                            | weekly
+                        li
+                          a(href="javascript:void(0);")
+                            i.fa.fa-calendar-check-o
+                            | monthly
+                        li
+                          a(href="javascript:void(0);") 
+                            i.fa.fa-calendar
+                            | yearly
+                  .card-body
+                    h3 $34,324.50
+                      span.badge.badge-secondary 25.7%
+                        i.fa.fa-angle-up 
+                    .progress.progress-secondary
+                      .progress-bar.progress-bar-striped.progress-bar-animated(style="width: 45%" )
+                    h4.text-light You made an extra 
+                      span.text-secondary $1,827.24 
+                      | this week                     
+          .col-span-12(class="2xl:col-span-6 xl:col-span-7 2xl:order-none  md:order-1")
+            .card.recent-ordertbl
+              .card-header
+                h4 Recent Orders
+                .setting-card.action-menu                 
+                  a.action-toggle(href="javascript:void(0)")
+                   i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly 
+              .card-body                   
+                .overflow-x-auto
+                  table.table
+                    thead
+                      tr                       
+                        th Customer
+                        th Invoice
+                        th Pusrchase on
+                        th Amout
+                        th Status
+                        th Tracking
+                    tbody
+                      tr
+                        td
+                          .media                           
+                            .img-wrap
+                              img.img-fluid.rounded-50(src="../assets/images/avtar/1.jpg" alt="user")
+                            .media-body
+                              | Julie Mandol
+                        td #4789347
+                        td 15 Mar 2022
+                        td $72545
+                        td 
+                          span.badge.badge-secondary done
+                        td GO4YOU
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid.rounded-50(src="../assets/images/avtar/2.jpg" alt="user")
+                            .media-body
+                              | Marc Greyham
+                        td #2387349
+                        td 03 Jul 2022
+                        td $38445
+                        td 
+                          span.badge.badge-success Pending
+                        td PU58OU
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid.rounded-50(src="../assets/images/avtar/3.jpg" alt="user")
+                            .media-body
+                              | Svenja Olank
+                        td #4385809
+                        td 23 Apr 2022
+                        td $29023
+                        td 
+                          span.badge.badge-warning cancle
+                        td HDRYO5
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid.rounded-50(src="../assets/images/avtar/4.jpg" alt="user")
+                            .media-body
+                              | Jacob Jones
+                        td #8934090
+                        td 20 Nov 2022
+                        td $20867
+                        td 
+                          span.badge.badge-danger done
+                        td SOPY8U
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid.rounded-50(src="../assets/images/avtar/5.jpg" alt="user")
+                            .media-body
+                              | Guy Hawkins
+                        td #4579034
+                        td 19 Jan 2022
+                        td $48187
+                        td 
+                          span.badge.badge-info Pending
+                        td KO8LOP
+          .col-span-12(class="2xl:col-span-6 xl:col-span-7 md:col-span-6 xl:order-none md:order-1")
+            .card.earning-revenue
+              .card-header
+                h4 Earning Revenue
+                .setting-card.action-menu
+                  a.action-toggle(href="javascript:void(0)")
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly 
+              .card-body
+                #earning-revenue
+          .col-span-12
+            .ecompro-slide
+              div
+                +ecomproduct('Earphones with Mic','134 Sales','4.2 (228)','1.jpg')
+              div
+                +ecomproduct('Noise ColorFit Pro 4','134 Sales','4.2 (228)','2.jpg')
+              div
+                +ecomproduct('Honor MagicBook 15','134 Sales','4.2 (228)','3.jpg')
+              div
+                +ecomproduct('EUME Barret','134 Sales','4.2 (228)','4.jpg')
+          .col-span-12(class="2xl:col-span-3 md:col-span-5")
+            .card.sale-categorychart
+              .card-header
+                h4 Sales by Category
+                .setting-card.action-menu
+                  a.action-toggle(href="javascript:void(0)")
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly
+              .card-body
+                #sale-category
+                .category-count
+                  h2 $29.8K
+          .col-span-12(class="2xl:col-span-5 md:col-span-7")  
+            .card.map-status
+              .card-body
+                .map-contain                 
+                  div
+                    .progress-group
+                      h6.text-light Bangladesh
+                      .flex.items-center
+                        .progress.progress-primary
+                          .progress-bar(style='width:75%')                       
+                    .progress-group
+                      h6.text-light United States
+                      .flex.items-center
+                        .progress.progress-secondary
+                          .progress-bar(style='width:50%')                       
+                    .progress-group
+                      h6.text-light India
+                      .flex.items-center
+                        .progress.progress-info
+                          .progress-bar(style='width:25%')                       
+                    .progress-group
+                      h6.text-light Australia
+                      .flex.items-center
+                        .progress.progress-warning
+                          .progress-bar(style='width:60%')
+                    .progress-group
+                      h6.text-light China
+                      .flex.items-center
+                        .progress.progress-danger
+                          .progress-bar(style='width:40%')
+                    .progress-group
+                      h6.text-light Africa
+                      .flex.items-center
+                        .progress.progress-info
+                          .progress-bar(style='width:50%')
+              .card-footer.border-0
+                ul.map-detail
+                  li
+                    h6.text-light Total New User
+                    h5 14,379,289 
+                  li
+                    h6.text-light Bounce Rate
+                    h5 92% 
+                  li
+                    h6.text-light Session Duration
+                    h5 01:10:82 
+                  li
+                    h6.text-light Sessions
+                    h5 238K           
+          .col-span-12(class="2xl:col-span-4 xl:col-span-5 md:col-span-6 xl:order-none md:order-1")
+            .card.support-inboxtbl
+              .card-header
+                h4 Support Inbox
+                .setting-card.action-menu
+                  a.action-toggle(href="javascript:void(0)")
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly 
+              .card-body                   
+                .overflow-x-auto
+                  table.table                   
+                    tbody
+                      tr
+                        td
+                          .media                           
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/1.jpg" alt="user")
+                            .media-body
+                              h6 Jordan Nt.text-lightlo
+                              p.text-light My item doesn’t shio to correct address
+                        td 
+                          span.badge.badge-secondary 10 hours ago
+                      tr
+                        td
+                          .media                           
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/2.jpg" alt="user")
+                            .media-body
+                              h6 Carolien Bloeme
+                              p.text-light You Shipped Color, i need it to be
+                        td 
+                          span.badge.badge-success 8 hours ago
+                      tr
+                        td
+                          .media                           
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/3.jpg" alt="user")
+                            .media-body
+                              h6 Lisanne Viscaal
+                              p.text-light Can you please refund back my mony
+                        td 
+                          span.badge.badge-warning 6 hours ago
+                      tr
+                        td
+                          .media                           
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/4.jpg" alt="user")
+                            .media-body
+                              h6 Sun Jun
+                              p.text-light Thank you very much for quick support! 
+                        td 
+                          span.badge.badge-info 4 hours ago
+                      tr
+                        td
+                          .media                           
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/5.jpg" alt="user")
+                            .media-body
+                              h6 Tolos Joune
+                              p.text-light My item doesn’t shio to correct address
+                        td 
+                          span.badge.badge-danger 30 minute ago
+      // theme body start
+
+
+    // footer start
+    +footer
+    // footer end 
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile      

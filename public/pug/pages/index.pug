@@ -1,0 +1,653 @@
+-var dashboard = true ;
+-var apexchart = true ;
+
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+
+  +headerfile("Dashboard")
+
+  body
+
+    // Loader Start
+    +loader
+    // Loader End
+
+    // Header Start
+    +header
+    // Header End
+
+    .themebody-wrap
+
+      // breadcrumb start
+      .codex-breadcrumb
+        .breadcrumb-contain
+          .left-breadcrumb
+            h1 Default
+          .right-breadcrumb
+            ul.breadcrumb
+              li.breadcrumb-item
+                a(href='javascript:void(0);') Dashboard
+              li.breadcrumb-item.active
+                a(href='javascript:void(0);') Default
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.common-dash
+        .grid.grid-cols-12.page-gap
+          .col-span-12(class="2xl:col-span-4 md:col-span-6")
+            .card.welcome-card.overflow-hidden
+              .welcome-imgwarp
+                img.img-fluid(src="../assets/images/dashboard/welcome-banner.jpg" alt="logo" )
+              .card-body
+                h2 Welcome to Gilbert
+                p Congratulations! Your account has been has been Setup and  you are ready to configure your dashboard now. Configuration only take a couple of seconds.   
+                a.btn.btn-primary(href="javascript:void(0)") Whats New
+          .col-span-12(class="2xl:col-span-4 md:col-span-6 sm:col-span-12")
+            .grid.grid-cols-12.cdx-gap
+              .col-span-12(class="md:col-span-12 sm:col-span-6")
+                .card.earning-chart.animated-shap
+                  .card-header
+                    h4 Total Earning
+                    .setting-card.action-menu                     
+                      .action-toggle
+                        i(data-feather="more-horizontal")                        
+                      ul.action-dropdown                 
+                        li
+                          a(href="javascript:void(0);")
+                            i.fa.fa-calendar-o
+                            | weekly
+                        li
+                          a(href="javascript:void(0);")
+                            i.fa.fa-calendar-check-o
+                            | monthly
+                        li
+                          a(href="javascript:void(0);") 
+                            i.fa.fa-calendar
+                            | yearly 
+                  .card-body
+                    .earning-detail
+                      h3 $3,354 
+                        span items
+                      h5.text-success  22% this Week
+                        i.fa.fa-angle-up
+                    #earning-chart  
+              .col-span-12(class="md:col-span-12 sm:col-span-6")
+                  .card.product-chart.animated-shap
+                    .card-header
+                      h4 Total Product
+                      .setting-card.action-menu                       
+                        .action-toggle
+                          i(data-feather="more-horizontal")                      
+                        ul.action-dropdown                 
+                          li
+                            a(href="javascript:void(0);")
+                              i.fa.fa-calendar-o
+                              | weekly
+                          li
+                            a(href="javascript:void(0);")
+                              i.fa.fa-calendar-check-o
+                              | monthly
+                          li
+                            a(href="javascript:void(0);") 
+                              i.fa.fa-calendar
+                              | yearly                                            
+                    .card-body
+                      .prochart-detail
+                        h3 $1,640
+                          span items
+                        h5.text-danger 22% this Week
+                          i.fa.fa-angle-down
+                      #product-chart                                    
+          .col-span-12(class="2xl:col-span-4 md:col-span-6 2xl:order-none  md:order-1")         
+            .card.countri-tbl
+              .card-header
+                h4 Sales by Countries
+                .setting-card.action-menu                 
+                  .action-toggle
+                    i(data-feather="more-horizontal")                  
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly                                        
+              .card-body
+                .overflow-x-auto
+                  table.table.tblbody-p0
+                    tbody
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-secondary-light us
+                            .media-body United states 
+                        td.text-success 30.7%
+                          i.fa.fa-angle-up
+                        td  Sep/15
+                        td 750k                         
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-success-light uk
+                            .media-body United kingdom                             
+                        td.text-danger 25.7%
+                          i.fa.fa-angle-down
+                        td  Jun/16
+                        td 598k                         
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-info-light in
+                            .media-body India
+                        td.text-success 35.00%
+                          i.fa.fa-angle-up
+                        td  Sep/17
+                        td 320k                         
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-warning-light ja
+                            .media-body japan                              
+                        td.text-danger 28.07%
+                          i.fa.fa-angle-down
+                        td  Sep/18
+                        td 748k                         
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-danger-light ko
+                            .media-body korea                         
+                        td.text-success 48.00%
+                          i.fa.fa-angle-down
+                        td  Sep/19
+                        td 748k                         
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-secondary-light ch
+                            .media-body China                
+                        td.text-success 39.00%
+                          i.fa.fa-angle-down
+                        td  Sep/20
+                        td 618k 
+                      tr
+                        td
+                          .media
+                            .icon-countri.bg-info-light It
+                            .media-body Italy
+                        td.text-success 39.00%
+                          i.fa.fa-angle-down
+                        td  Sep/20
+                        td 618k                         
+          .col-span-12(class="2xl:col-span-6")
+            .card.recent-ordertbl
+              .card-header
+                h4 Recent Orders
+                .setting-card.action-menu                 
+                  .action-toggle
+                    i(data-feather="more-horizontal")                  
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly 
+              .card-body                   
+                .overflow-x-auto
+                  table.table
+                    thead
+                      tr                       
+                        th Customer
+                        th Product
+                        th Amount
+                        th Vendor
+                        th Rate
+                        th Status
+                    tbody
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/1.jpg" alt="customer")
+                            .media-body
+                              | Theresa Web
+                        td
+                          a.text-light(href="product-detail.html")  Apple Airpod Pro
+                        td $847.39
+                        td Palestine
+                        td 4.0(120 votes)
+                        td 
+                          span.badge.badge-secondary Paid
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/2.jpg" alt="customer")
+                            .media-body
+                              | Albert Flores 
+                        td
+                          a.text-light(href="product-detail.html") Redmi Note 10s
+                        td $470.34
+                        td Serbia
+                        td 4.8(140 votes)
+                        td 
+                          span.badge.badge-info Unpaid
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/3.jpg" alt="customer")
+                            .media-body
+                              | Kathryn Murphy
+                        td 
+                          a.text-light(href="product-detail.html") Razer kraken headset
+                        td $394.39
+                        td Republic
+                        td 3.5(15 votes)
+                        td 
+                          span.badge.badge-warning Paid
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/avtar/4.jpg" alt="customer")
+                            .media-body
+                              | Jacob Jones
+                        td 
+                          a.text-light(href="product-detail.html") iphone 12 pro max
+                        td $249.29
+                        td Greece
+                        td 5.0(280 votes)
+                        td 
+                          span.badge.badge-danger Paid
+          .col-span-12(class="2xl:col-span-6 xl:col-span-7")
+            .grid.grid-cols-12
+              .col-span-12
+                .grid.grid-cols-12.cdx-gap
+                  .col-span-12(class="sm:col-span-6")
+                    .card.sale-revenue
+                      .card-header
+                        h4 New Project
+                        .setting-card.action-menu
+                          .action-toggle
+                            i(data-feather="more-horizontal")
+                          ul.action-dropdown                 
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-o
+                                | weekly
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-check-o
+                                | monthly
+                            li
+                              a(href="javascript:void(0);") 
+                                i.fa.fa-calendar
+                                | yearly
+                      .card-body
+                        h3 $30,347
+                          span.badge.badge-primary 20.7%
+                            i.fa.fa-angle-up 
+                        .progress.progress-primary
+                          .progress-bar(style="width:45%")
+                  .col-span-12(class="sm:col-span-6")
+                    .card.sale-revenue
+                      .card-header
+                        h4 Total Sale
+                        .setting-card.action-menu
+                          .action-toggle
+                            i(data-feather="more-horizontal")
+                          ul.action-dropdown                 
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-o
+                                | weekly
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-check-o
+                                | monthly
+                            li
+                              a(href="javascript:void(0);") 
+                                i.fa.fa-calendar
+                                | yearly
+                      .card-body
+                        h3 $30,307
+                          span.badge.badge-secondary 28.00%
+                            i.fa.fa-angle-down 
+                        .progress.progress-secondary
+                          .progress-bar(style="width: 45%" )                   
+                  .col-span-12(class="sm:col-span-6")
+                    .card.sale-revenue
+                      .card-header
+                        h4 Total Revenu
+                        .setting-card.action-menu
+                          .action-toggle
+                            i(data-feather="more-horizontal")
+                          ul.action-dropdown                 
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-o
+                                | weekly
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-check-o
+                                | monthly
+                            li
+                              a(href="javascript:void(0);") 
+                                i.fa.fa-calendar
+                                | yearly
+                      .card-body
+                        h3 $25,357
+                          span.badge.badge-success 18.00%
+                            i.fa.fa-angle-up 
+                        .progress.progress-success
+                          .progress-bar(style="width: 45%" )                   
+                  .col-span-12(class="sm:col-span-6")
+                    .card.sale-revenue
+                      .card-header
+                        h4 Total Expenses
+                        .setting-card.action-menu
+                          .action-toggle
+                            i(data-feather="more-horizontal")
+                          ul.action-dropdown                 
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-o
+                                | weekly
+                            li
+                              a(href="javascript:void(0);")
+                                i.fa.fa-calendar-check-o
+                                | monthly
+                            li
+                              a(href="javascript:void(0);") 
+                                i.fa.fa-calendar
+                                | yearly
+                      .card-body
+                        h3 $45,347
+                          span.badge.badge-info 22.00%
+                            i.fa.fa-angle-up 
+                        .progress.progress-info
+                          .progress-bar(style="width: 45%" )                   
+          .col-span-12(class="2xl:col-span-5 xl:col-span-5")
+            .card.visitor-performance             
+              .card-header
+                h4 Visitors Performance
+                .setting-card.action-menu                 
+                  .action-toggle
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly
+              .card-body
+                #visitor-chart 
+          .col-span-12(class="2xl:col-span-7")         
+            .card.project-summarytbl
+              .card-header
+                h4 Project Summary
+                .setting-card.action-menu                 
+                  .action-toggle
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly   
+              .card-body                   
+                .overflow-x-auto
+                  table.table
+                    thead
+                      tr                       
+                        th Order id
+                        th Project Name
+                        th Team
+                        th Project Cost
+                        th Project Status                       
+                        th Payment
+                    tbody
+                      tr
+                        td #H034
+                        td Payment Bank App
+                        td
+                          ul.team
+                            li
+                              a(href="javascript:void(0);")
+                                .img-wrap
+                                  img.img-fluid.rounded-50(src="../assets/images/avtar/1.jpg" , alt="")
+                            li
+                              a(href="javascript:void(0);")
+                                .img-wrap
+                                  img.img-fluid.rounded-50(src="../assets/images/avtar/2.jpg" , alt="")
+                            li  +2 More Employees
+                        td $45,376
+                        td Completed                       
+                        td 
+                          span.badge.badge-secondary Done 
+                      tr
+                        td #A230
+                        td Cytrust Dashboard
+                        td 
+                          ul.team
+                            li
+                              a(href="javascript:void(0);")
+                                .img-wrap
+                                  img.img-fluid.rounded-50(src="../assets/images/avtar/3.jpg" , alt="")
+                            li
+                              a(href="javascript:void(0);")
+                                .img-wrap
+                                  img.img-fluid.rounded-50(src="../assets/images/avtar/4.jpg" , alt="")
+                            li  +3 More Employees
+                        td $40,258
+                        td In Progress
+                        td 
+                          span.badge.badge-success Pending
+                      tr
+                        td #Y723
+                        td Amazon website
+                        td
+                          ul.team
+                              li
+                                a(href="javascript:void(0);")
+                                  .img-wrap
+                                    img.img-fluid.rounded-50(src="../assets/images/avtar/5.jpg" , alt="")
+                              li
+                                a(href="javascript:void(0);")
+                                  .img-wrap
+                                    img.img-fluid.rounded-50(src="../assets/images/avtar/6.jpg" , alt="")
+                              li  +6 More Employees
+                        td $32,256
+                        td Completed
+                        td 
+                          span.badge.badge-info Done 
+                      tr
+                        td #A342
+                        td Payment BAnk App
+                        td
+                          ul.team
+                              li
+                                a(href="javascript:void(0);")
+                                  .img-wrap
+                                    img.img-fluid.rounded-50(src="../assets/images/avtar/7.jpg" , alt="")
+                              li
+                                a(href="javascript:void(0);")
+                                  .img-wrap
+                                    img.img-fluid.rounded-50(src="../assets/images/avtar/8.jpg" , alt="")
+                              li  +7 More Employees
+                        td $25,058
+                        td In Progress
+                        td 
+                          span.badge.badge-warning Pending
+                      tr
+                        td #C121
+                        td Cytrust Dashboard
+                        td
+                          ul.team
+                              li
+                                a(href="javascript:void(0);")
+                                  .img-wrap
+                                    img.img-fluid.rounded-50(src="../assets/images/avtar/8.jpg" , alt="")
+                              li
+                                a(href="javascript:void(0);")
+                                  .img-wrap
+                                    img.img-fluid.rounded-50(src="../assets/images/avtar/9.jpg" , alt="")
+                              li  +2 More Employees
+                        td $36,585
+                        td In Progress
+                        td 
+                          span.badge.badge-danger Pending         
+          .col-span-12(class="2xl:col-span-4 md:col-span-6")
+            .card.visitor-ratetbl
+              .card-header
+                h4 Visitors(+1.6%)
+                .setting-card.action-menu                 
+                  .action-toggle
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly   
+              .card-body
+                #visitor-chart2         
+          .col-span-12(class="2xl:col-span-4 md:col-span-6")
+            .card.transaction-tbl
+              .card-header
+                h4 Transactions
+                .setting-card.action-menu                 
+                  .action-toggle
+                    i(data-feather="more-horizontal")
+                  ul.action-dropdown                 
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-o
+                        | weekly
+                    li
+                      a(href="javascript:void(0);")
+                        i.fa.fa-calendar-check-o
+                        | monthly
+                    li
+                      a(href="javascript:void(0);") 
+                        i.fa.fa-calendar
+                        | yearly  
+              .card-body                   
+                .overflow-x-auto
+                  table.table
+                    thead
+                      tr                       
+                        th Product Name
+                        th Category
+                        th Cashback
+                        th Amount                        
+                    tbody
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt="product")
+                            .media-body Toys                             
+                        td Electronic
+                        td +$25
+                        td $250.00                       
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="product")
+                            .media-body Cutlery
+                        td Restaurant
+                        td +$20
+                        td $450.00 
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt="product")
+                            .media-body Motors
+                        td Pet Food
+                        td +$42
+                        td $200.00
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt="product")
+                            .media-body iphone
+                        td Clothing
+                        td +$30
+                        td $540.00  
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt="product")
+                            .media-body Redmi
+                        td Property
+                        td +$40
+                        td $810.00
+                      tr
+                        td
+                          .media
+                            .img-wrap
+                              img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="product")
+                            .media-body Apple Airpod
+                        td Hobbies
+                        td +$70
+                        td $990.00                                
+          .col-span-12(class="2xl:col-span-4 md:col-span-6 2xl:order-none  md:order-1")
+            .card.cdx-upgrade.bg-primary
+              .card-body
+                div
+                  h2 Need More Stats?
+                  p Upgrade to pro max for added benefits.
+                  a.btn.btn-secondary(href="blog-detail.html") Upgrad Now!
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile  

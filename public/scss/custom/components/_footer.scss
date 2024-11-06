@@ -1,0 +1,19 @@
+/*******************
+  13 FOOTER START
+********************/
+.codex-footer {       
+    left: 0;
+    bottom:0;
+    background-color: $white ;
+    padding: 15px 15px;
+    text-align: center;
+    z-index:1;
+    transition: all 0.5s ease;
+    border-top: 1px solid $theme-border;
+    margin-inline-start: 280px;
+    margin-block-start: 24px;
+    width: calc(100% - 280px);   
+    p{              
+        font-size: 15px;
+    }   
+}

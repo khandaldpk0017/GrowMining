@@ -1,0 +1,82 @@
+/*******************
+  04 BUTTON START
+*******************/
+$btn-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "dark":       $theme-dark,
+    "light":      $font-light, 
+    "white":      $white,
+);
+
+.btn{
+  border-radius:5px;
+  padding:12px 18px;
+  line-height: 1;
+  display: inline-block;
+  &.btn-md{
+    padding:10px 15px;
+  }  
+  &.btn-iconsm{
+    padding:8px 10px;
+  }
+}
+.btn-icon-border{
+  padding:10px 12px !important;
+  border-radius: 5px;
+  color: $font-light;
+  border: 1px solid $theme-border !important;
+  line-height: 1;
+  text-transform: capitalize;
+  svg{
+    width: auto;
+    height: 18px;
+  }
+  &:hover{
+    color: $white !important;
+    background-color: $theme-primary !important;
+    border-color: $theme-primary !important;
+  }
+}
+@each  $btn-colorname , $btn-color  in $btn-colors {
+    .btn-#{$btn-colorname}{
+        color: $white;    
+        background-color: $btn-color !important;   
+        border-color: $btn-color !important;      
+        &:hover{
+          color: $white;
+          background-color: $btn-color !important;      
+        }          
+      &.btn_rounded{
+        border-radius: 30px;
+      }          
+    }    
+    .btn.btn-outline-#{$btn-colorname}{    
+        background-color:transparent !important;                  
+        border-radius:5px;
+        border:1px solid $btn-color !important;
+        color: $btn-color !important;
+        &:hover,
+        &:focus,
+        &:active{
+          outline-color:$btn-color !important;
+          background-color: $btn-color !important;
+          color:$white !important;          
+        }       
+    }
+    .btn-#{$btn-colorname}{      
+      background-color: $btn-color;
+      color: $white;  
+      border-radius:5px;  
+    }
+}
+
+.element-buttons{ 
+  .btn{
+    margin:3px 0;
+  }
+}

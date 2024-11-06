@@ -1,0 +1,91 @@
+-var sparklinechart = true ;
+-var customsparklinechart = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+
+  +headerfile("sparkline")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Apex Charts','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+          .grid.grid-cols-12.cdx-gap
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 line chart
+                .card-body
+                  .splinechart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 area chart
+                .card-body
+                  .spareachart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 line area chart
+                .card-body
+                  .splineareachart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 range chart
+                .card-body
+                  .sprangechart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 bar chart
+                .card-body
+                  .spbarchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 stacked bar chart
+                .card-body
+                  .spstackedchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 negetive bar chart
+                .card-body
+                  .spnegbarchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 Tristate chart
+                .card-body
+                  .sptristaterchart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 Pie  chart
+                .card-body
+                  .sppiechart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 Box Plots  chart
+                .card-body
+                  .spboxplotschart
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile

@@ -1,0 +1,329 @@
+
+//-loader start
+mixin loader
+  //- .codex-loader
+  //-   svg.bar-loader(width='291' height='108' viewbox='0 0 291 108' xmlns='http://www.w3.org/2000/svg')
+  //-     rect(width='43' height='108')
+  //-     rect(x='62' width='43' height='108')
+  //-     rect(x='124' width='43' height='108')
+  //-     rect(x='186' width='43' height='108')
+  //-     rect(x='248' width='43' height='108')
+
+
+//- qty counter start
+mixin qtycounter
+  .input-group.pro-quantity
+    span.input-group-text.count-minus 
+      i(data-feather="minus")
+    input.form-control.pro-qty(type='text' name='qty count' value='1')
+    span.input-group-text.count-plus 
+      i(data-feather="plus")
+
+//- custom chekbox start             
+mixin checkinput(inputType, inputId, inputName, checked, inputClass)
+  span.custom-check-input.custom-chek
+    input.form-check-input(
+      type = inputType
+      id = inputId
+      name = inputName   
+      checked = checked     
+    )   
+//- custom chekbox end
+
+//- rating list strat
+mixin proRating
+  ul.rating-list
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+
+//- rating list end
+
+//- top product start
+mixin filterproduct(prosrc ,proname, proprice)
+  .top-product
+    .product-imgwrap 
+      img.img-fluid(src="../assets/images/pages/product/"+ prosrc, alt= prosrc)
+    .product-detailwrap
+      a(href="product-detail.html")
+        h6= proname
+      +proRating   
+      .price= '$'+ proprice   
+//- top product end
+
+
+//- ecom product start
+mixin ecomproduct(proname,des,rating,proimg) 
+  .card.ecom-product
+    .card-body
+      .product-imgwrap
+        img.img-fluid(src="../assets/images/ecom-dashboard/product/"+ proimg, alt=proimg)       
+      .detail-wrap
+        a(href="product-detail.html")
+          h5= proname
+        h6.text-light= des 
+        .rating-detail
+          +proRating
+          span.rating-detail.text-light= rating
+        ul.product-color
+          li.bg-primary
+            div
+          li.bg-secondary
+            div
+          li.bg-success
+            div
+          li.bg-info
+            div
+          li.bg-warning                        
+            div       
+//- ecom product start
+
+//- Product-Rating-START
+mixin proRatingWork(inputId)
+  .pro-rating                
+    - for(var i = 1; i < 6; i++)
+      input(type="radio", id=inputId+ i, name=inputId)
+      label.star(for=inputId+ i)    
+//- Product-Rating-END
+
+//- product box start
+mixin productBox(proImg, saleLabel, discountLabel, prodName, upadteProPrice, oldProPrice, ratingInputId)
+  .product-boxwrap
+    .product-imgwrap
+      a(href='product-detail.html')
+        img.img-fluid(src='../assets/images/pages/product/'+ proImg , alt="product box")
+      if saleLabel                                              
+        span.product-sale-label= saleLabel
+      if discountLabel
+        span.product-discount-label= discountLabel +'%'
+      ul.social
+        li
+          a(href='cart.html' data-tip='add to cart')
+            i(data-feather="shopping-cart")
+        li
+          a(href='product-detail.html' data-tip='Quick View')
+            i(data-feather="eye")
+        li
+          a(href='wishlist.html' data-tip='Wishlist')
+           i(data-feather="heart")
+    .product-detailwrap
+      div
+        a(href='product-detail.html')
+          h5= prodName
+        +proRatingWork(ratingInputId)   
+        .pro-price= '$'+ upadteProPrice              
+          span.old-price= '$'+ oldProPrice
+//- product box end
+
+
+
+
+//- user card start//
+mixin usercard (userimg,username,position)
+  .card.user-card
+    .card-header
+      .user-setting
+        .action-menu         
+          .action-toggle
+            i(data-feather="more-vertical")           
+          ul.action-dropdown
+            li
+              a(href="profile.html") 
+                i(data-feather="eye")
+                | View Profile
+            li
+              a(href="user-edit.html") 
+                i(data-feather="edit")
+                | Edit profile
+            li
+              button.btn
+                i(data-feather="trash")
+                | Delete profile
+    .card-body                       
+      .user-imgwrap         
+        img.img-fluid.rounded-50(src="../assets/images/avtar/"+ userimg, alt= userimg)
+      .user-detailwrap  
+        h3= username 
+        h6= position 
+        ul.codex-soclist
+          li
+            a(href="javascript:void(0);")
+              i.fa.fa-facebook
+          li
+            a(href="javascript:void(0);")
+              i.fa.fa-twitter
+          li
+            a(href="javascript:void(0);")
+              i.fa.fa-behance
+          li
+            a(href="javascript:void(0);")
+              i.fa.fa-linkedin
+          li
+            a(href="javascript:void(0);")
+              i.fa.fa-google                                       
+        .group-btn
+          a.btn.btn-primary.btn-md(href="javascript:void(0);") message                   
+          a.btn.btn-secondary.btn-md(href="javascript:void(0);") follow
+//- user card end//
+
+
+
+//- blog wrapper
+mixin bloggrid(title,name,date,imgsrc)
+  .blog-grid
+    .img-wrap
+      a(href='blog-detail.html')
+        img.img-fluid(src='../assets/images/pages/blog/' + imgsrc alt='blog')
+    .blog-detail
+      h4
+        a(href='blog-detail.html')= title
+      ul.post-meta
+        li
+          a(href='#')
+            i.fa.fa-user
+            span= name
+        li
+          a(href='#')
+            i.fa.fa-calendar
+            span= date
+      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet
+      a.btn.btn-primary.btn-sm(href="blog-detail.html") read more
+
+
+mixin contactcard(cname,cposistion,brithday,address,phonenumber,email,cadmin)
+  .card.contact-card
+    .card-body  
+      .media.items-center             
+        .user-imgwrapper          
+          img.img-fluid.rounded-50(src="../assets/images/avtar/"+ cadmin, alt= cadmin)  
+        .media-body
+          h4= cname
+          h6.text-light= cposistion 
+        .user-setting
+          .action-menu                       
+            .action-toggle
+              i(data-feather="more-vertical")
+            ul.action-dropdown
+              li
+                a.modal-toggle(href="javascript:void(0);") 
+                  i(data-feather="edit")                 
+                  | Edit contact
+              li
+                button.btn
+                  i(data-feather="trash")
+                  | Delete contact
+              li
+                button.btn
+                  i(data-feather="slash")
+                  | block contact
+      .user-detail
+        h5.text-primary.mb-10 
+          i.fa.fa-info-circle.mr-10
+          |infomation
+        p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+        ul.info-list
+          li
+            span brithday :- 
+            =brithday
+          li
+            span address :-
+            =address 
+          li
+            span phone :-
+            a(href="tel:"+ phonenumber)
+              =phonenumber 
+          li
+            span email :-
+            a(href="mailto:"+ email)
+              =email 
+        .user-action                   
+          a.btn.btn-primary(href='javascript:void(0);') 
+            i.fa.fa-commenting
+            //- | message                   
+          a.btn.btn-secondary(href='javascript:void(0);') 
+            i.fa.fa-phone             
+            //- | Call
+          a.btn.btn-success(href='javascript:void(0);') 
+            i.fa.fa-video-camera
+            //- |Video Call                    
+
+
+
+
+
+//- codex-breadcrumb start
+mixin codexbreadcrumb(pagename,pagetype)
+  .codex-breadcrumb
+    .breadcrumb-contain
+      .left-breadcrumb
+        h1= pagename
+      .right-breadcrumb
+        ul.breadcrumb
+          li.breadcrumb-item
+            a(href='javascript:void(0);') Dashboard             
+          li.breadcrumb-item.active
+            a(href='javascript:void(0);')= pagetype
+          li.breadcrumb-item.active
+            a(href='javascript:void(0);')= pagename
+//- codex-breadcrumb end
+
+
+
+
+//- Pricing table 
+mixin pricingsimple(type,value,list1,list2,list3,list4,list5)
+  .codex-pricingtbl
+    .price-header               
+      h2= type
+      .price-value= value
+        span / month
+    ul.cdxprice-list
+      li
+        span= list1 
+        | Disk Space
+      li
+        span= list2
+        | Email Accounts
+      li
+        span= list3
+        | subdomailns
+      li
+        span= list4
+        | domains
+      li
+        span= list5
+        | bandwidth
+    a.btn.btn-primary(href='javascript:void(0);') Select Plan  
+
+mixin pricingadvance(pricingcls,type,value,priceicon,list1,list2,list3,list4,list5,btncls)
+  .codex-pricingadvance(class= pricingcls)
+    .price-header               
+      h3= type
+      .price-value= value
+        span / month
+    .price-icon
+      i(class= priceicon)
+    ul.cdxprice-list
+      li
+        span= list1 
+        | Disk Space
+      li
+        span= list2
+        | Email Accounts
+      li
+        span= list3
+        | subdomailns
+      li
+        span= list4
+        | domains
+      li
+        span= list5
+        | bandwidth
+    a.btn(href='javascript:void(0);' class= btncls) Select Plan  

@@ -1,0 +1,70 @@
+-var echart = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+
+  +headerfile("echart")
+ 
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Echart','charts')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+          .grid.grid-cols-12.cdx-gap
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 line chart
+                .card-body
+                  #linechart.echart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 area chart
+                .card-body
+                  #eareachart.echart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 bar chart
+                .card-body
+                  #ebarchart.echart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 doughnut chart
+                .card-body
+                  #edoughnutchart.echart.position-relative
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 Scatter chart
+                .card-body
+                  #escatterchart.echart
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 gauge chart
+                .card-body
+                  #egaugechart.echart
+                    
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // customzier start
+    include ../components/customizer
+    // customzier end
+
+    +footerfile
